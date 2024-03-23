@@ -1,1 +1,8 @@
-# Meta-Analysis_Apathy_Physical-Activity-
+# Apathy and Physical Activity: A Systematic Review and Meta-Analysis
+
+## Rmd script
+This repository contains an `Rmd` script "Apathy.Rmd" to conduct the meta-analysis examining the relationship between apathy and physical activity as well as subgroup meta-analyses and meta-regressions. 
+
+## Data for analyses in Rmd
+The data used in the Rmd script for the main meta-analysis based on on Pearson’s r are in "PA_Apathy_r.csv".
+The data used for the secondary meta-analysis based on Spearman’s rho are in "PA_Apathy_rho.csv".
