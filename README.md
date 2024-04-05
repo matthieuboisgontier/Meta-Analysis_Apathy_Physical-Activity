@@ -9,5 +9,4 @@ The data used for the secondary meta-analysis based on Spearman’s rho are in "
 The data used for the p-curve analysis are in "Data for p-curve analysis.csv".
 
 ## R script
-The exact-p calculation.R script was used to compute exact p-values when they were not reported in an article but sample size (n) and Pearson’s correlation coefficient (r) were avaible. These p-values were then reported in Table 1.
-
+The exact-p calculation.R script was used to compute exact p-values when they were not reported in an article but sample size (n) and Pearson’s correlation coefficient (r) were avaible. These p-values were then reported in Table 1 and used in the meta-analysis.
