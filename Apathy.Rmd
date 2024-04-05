@@ -85,7 +85,7 @@ glimpse(apathy_rho)
 
 # Meta-analysis method
 
-In a meta-analysis, we pooled Pearson product-moment correlations from eligible studies to examine the relationship between apathy and physical activity. Correlations were pooled using the generic inverse pooling method via the ‘metacor’ function in the R ‘meta’ package (Schwarzer et al., 2023a). This function automatically performs a necessary Fisher’s z-transformation on the original, untransformed correlations prior to pooling. The ‘metacor’ function also reconverts the pooled association back to its original form for ease of interpretation. We used the ‘metafor’ package (Vietchbauer, 2010, 2023) to compare our three-level model to one in which a level was removed to investigate if our three-level model represented the variability in our data better than a two-level model. We anticipated considerable between-study heterogeneity, and therefore used a random-effects model to pool correlations. The restricted maximum likelihood (RML) estimator (Viechtbauer et al., 2005) was used to calculate the heterogeneity variance Tau2. In addition to Tau2, to quantify between study heterogeneity, we report the I2 statistic, which provides the percentage of variability in the correlations that is not caused by sampling error (Higgins et al., 2002). The I2 statistic was interpreted as follows: 0-40%, may not be important; 30-60%, may represent moderate heterogeneity; 50-90%, may represent substantial heterogeneity; and 75-100%, may represent considerable heterogeneity. To reduce the risk of false positives, we used a Knapp-Hartung adjustment (Knapp et al.,2003) to calculate the confidence interval around the pooled association. We also report the prediction interval, which provides a range within which we can expect the associations of future studies to fall based on the current evidence. The pooled correlation was interpreted using Cohen’s conventions (Cohen et al., 1998): r ≈ -0.10, small negative correlation; r ≈ -0.30, moderate negative correlation; r ≈ -0.50, large negative correlation. Egger’s regression test of funnel plot asymmetry (Egger et al., 1997) and a p-curve analysis (Simonsohn et al., 2014) were conducted to assess potential publication bias in our meta-analysis.
+In a meta-analysis, we pooled Pearson product-moment correlations from eligible studies to examine the relationship between apathy and physical activity. Correlations were pooled using the generic inverse pooling method via the ‘metacor’ function in the R ‘meta’ package (Schwarzer et al., 2023a). This function automatically performs a necessary Fisher’s z-transformation on the original, untransformed correlations prior to pooling. The ‘metacor’ function also reconverts the pooled association back to its original form for ease of interpretation. We used the ‘metafor’ package (Vietchbauer, 2010, 2023) to compare our three-level model to one in which a level was removed to investigate if our three-level model represented the variability in our data better than a two-level model. We anticipated considerable between-study heterogeneity, and therefore used a random-effects model to pool correlations. The restricted maximum likelihood (RML) estimator (Viechtbauer et al., 2005) was used to calculate the heterogeneity variance Tau2. In addition to Tau2, to quantify between study heterogeneity, we report the I2 statistic, which provides the percentage of variability in the correlations that is not caused by sampling error (Higgins et al., 2002). The I2 statistic was interpreted as follows: 0-40%, may not be important; 30-60%, may represent moderate heterogeneity; 50-90%, may represent substantial heterogeneity; and 75-100%, may represent considerable heterogeneity. To reduce the risk of false positives, we used a Knapp-Hartung adjustment (Knapp et al.,2003) to calculate the confidence interval around the pooled association. We also report the prediction interval, which provides a range within which we can expect the associations of future studies to fall based on the current evidence. The pooled correlation was interpreted using Cohen’s conventions (Cohen et al., 1998): r ≈ -0.10, small negative correlation; r ≈ -0.30, moderate negative correlation; r ≈ -0.50, large negative correlation. Egger’s regression test of funnel plot asymmetry (Egger et al., 1997) and a p-curve analysis (Simonsohn et al., 2014) were conducted to assess potential publication bias in our meta-analysis. The Rücker’s limit meta-analysis method (Schwarzer et al., 2023b), which explicitly includes the heterogeneity variance in the model, was used to compute bias-corrected estimate of the true effect size.
 
 A secondary meta-analysis was conducted using the same approach, but based on Spearman’s rho values, to further test the relationship between apathy and physical activity.
 
@@ -111,10 +111,10 @@ m.cor <- metacor(cor = cor,
 summary(m.cor)
 ```
 
-Our meta-analysis of 14 studies (n = 1220) based on Pearson’s r revealed a statistically significant small to moderate negative correlation between apathy and physical activity (r = -0.17; 95% confidence interval [95% CI]: -0.24 to -0.10; p = 0.0002). Further supporting this result, between-study statistical heterogeneity could be considered as not important (Tau2 = 0.004, 95% CI: 0.000 to 0.032; I2 = 18.1%, 95% CI: 0.0 to 55.8%), and the prediction interval ranged from r = -0.32 to -0.02, suggesting that the true effect size is at least small, and that the correlation is expected to be negative for a future study.
+Our meta-analysis of 22 studies (n = 12,541) based on Pearson’s r revealed a statistically significant small negative correlation between apathy and physical activity (r = -0.13; 95% confidence interval [95% CI]: -0.18 to -0.09; p < 0.0001). Further supporting this result, between-study statistical heterogeneity could be considered moderate (Tau2 = 0.0038, 95% CI: 0.0003 to 0.0167; I2 = 49.0%, 95% CI: 16.4 to 68.9%), and the prediction interval ranged from r = -0.26 to 0.00, suggesting that the correlation is expected to be negative for a future study.
 
 
-```{r Forest plot apathy and PA, fig.height=5, fig.width=10}
+```{r Forest plot apathy and PA, fig.height=7, fig.width=10}
 forest(m.cor, 
             layout = "Revman5",
             sortvar = -TE,
@@ -259,9 +259,9 @@ Health_subg <- update(m.cor,
 Health_subg
 ```
 
-The test of subgroup differences between health status measures was possible between studies comprising people with Parkinson (k = 4), stroke (k = 2), and older adults with cognitive impairment (k = 2). We found statistical differences between these studies (p = 0.0002). The relationship between apathy and physical activity was statistically significant only in studies that included participants with Parkinson's disease (r = -0.22; 95% CI: -0.29 to -0.12). 
+The test of subgroup differences between health status was possible between studies comprising older adults who were healthy, depressed, fallers, or had mild cognitive impairment (k = 10), people with Parkinson's Disease (k = 5), and stroke survivors (k = 3). We found statistical difference between these studies (p < 0.0001) (Table 2; Figure 6). The relationship between apathy and physical activity was statistically significant in studies that included older adults who were healthy, depressed, fallers, or had mild cognitive impairment (r = -0.10; 95% CI: -0.15 to -0.05) or patients with Parkinson’s disease (r = -0.22; 95% CI: -0.31 to -0.14), but not in studies that included stroke survivors (r = -0.20; 95% CI: -0.64 to -0.34). However, statistical power was lacking in the latter (k = 3) and other health status (k = 1).
 
-```{r Forest plot for subgroup by Health condition, fig.height=10, fig.width=8}
+```{r Forest plot for subgroup by Health condition, fig.height=11, fig.width=10}
 forest(Health_subg,
             layout = "Revman",
             sortvar = -TE, 
@@ -292,6 +292,7 @@ forest(Health_subg,
 dev.off()
 ```
 
+## Subgroup analysis by physical activity measurement instruments
 
 ## Subgroup analysis by physical activity outcome
 
@@ -304,10 +305,10 @@ PAout_subg <- update(m.cor,
 PAout_subg
 ```
 
-The test of subgroup differences between physical activity outcomes was possible between studies using active time per day or week (k = 5), MET-min/week (k = 4), or a score from a questionnaire (k = 3). We found statistical difference between these studies (p = 0.006), with only the studies using active time per day or week (r = -0.22; 95% CI: -0.30 to -0.14) and a score from a questionnaire (r = -0.27; 95% CI: -0.39 to -0.14) showing a statistically significant correlation.
+The test of subgroup differences between physical activity outcomes was possible between studies using a score from a questionnaire (k = 7), MET-min/week (k = 6), active time per day or week (k = 5), and steps per day (k = 2) (Table 2; Figure 7). We found statistical difference between these studies (p < 0.0001). The relationship between apathy and physical activity was statistically significant in studies using a score (r = -0.14; 95% CI: -0.23 to -0.04), MET-min/week (r = -0.15; 95% CI: -0.22 to -0.08), and active time (r = -0.22; 95% CI: -0.30 to -0.14), but not in studies that used the number of steps per day (r = -0.13; 95% CI: -0.99 to 0.98). However, statistical power was lacking in the latter (k = 2) and other physical activity outcomes (k = 1).
 
 
-```{r PA outcome subgroup forest plot, fig.height=8, fig.width=8}
+```{r PA outcome subgroup forest plot, fig.height=12, fig.width=10}
 forest(PAout_subg, 
             layout = "RevMan5", 
             sortvar = -TE, 
@@ -350,9 +351,9 @@ apathy_subg <- update(m.cor,
 apathy_subg
 ```
 
-The test of subgroup differences between apathy measures was possible between studies using the Apathy Scale (k = 7) and the Apathy Evaluation Scale (k = 5). We observed no evidence of a statistical difference between these measures (p = 0.09), with only both studies using the Apathy Scale (r = -0.12; 95% CI: -0.24 to -0.10) and the Apathy Evaluation Scale (r = -0.23; 95% CI: -0.35 to -0.11) showing a statistically significant correlation.
+The test of subgroup differences between apathy measures was possible between studies using the Apathy Scale (k = 11), the Apathy Evaluation Scale (k = 5), the apathy subscale of the Geriatric Depression Scale (k = 4), and the apathy subscale of the Neuropsychiatric Inventory Questionnaire (k = 2) (Table 2; Figure 8). The relationship between apathy and physical activity was statistically significant in studies using the Apathy Scale (r = -0.14; 95% CI: -0.23 to -0.04), Apathy Evaluation Scale (r = -0.15; 95% CI: -0.22 to -0.08), and Geriatric Depression Scale (r = -0.22; 95% CI: -0.30 to -0.14), but not in studies that used the Neuropsychiatric Inventory Questionnaire (r = -0.13; 95% CI: -0.99 to 0.98). However, statistical power was lacking in the latter apathy measure (k = 2).
 
-```{r Forest plot for subgroup by apathy measure, fig.height=8, fig.width=8}
+```{r Forest plot for subgroup by apathy measure, fig.height=11, fig.width=10}
 forest(apathy_subg, 
             layout = "Revman5", 
             sortvar = -TE, 
@@ -392,8 +393,7 @@ dev.off()
 m.cor.reg.age <- metareg(m.cor, ~Age)
 m.cor.reg.age
 ```
-
-Age statistically influenced the correlation values of the meta-analysis studies (k = 9; p = 0.0009). 
+Age statistically influenced the correlation values of the meta-analysis studies (k = 13; p = 0.003).
 
 ```{r Bubble plot for meta-regression by age, fig.height=6, fig.width=6}
 Age.bubble <- bubble(m.cor.reg.age, 
@@ -429,7 +429,7 @@ m.cor.reg.women <- metareg(m.cor, ~Prop_women)
 m.cor.reg.women
 ```
 
-Conversely, the proportion of women (k = 9) did not statistically influence the meta-analysis studies' correlation values.
+The proportion of women did not statistically influence the correlation values of the meta-analysis studies (k = 21; p = 0.346).
 
 ```{r Bubble plot for meta-regression by proportion of women, fig.height=6, fig.width=6}
 Propwomen.bubble <- bubble(m.cor.reg.women, 
@@ -463,7 +463,7 @@ m.cor.reg.axis <- metareg(m.cor, ~ Q_score)
 m.cor.reg.axis
 ```
 
-The meta-regression by quality score based on the Quality Assessment Tool for Observational Cohort and Cross-Sectional Studies (k = 9) showed that a study’s quality did not influence correlation values (p = 0.813).
+The meta-regression by quality score based on the Quality Assessment Tool for Observational Cohort and Cross-Sectional Studies (k = 22) showed that a study’s quality did not influence correlation values (p = 0.986).
 
 ```{r Bubble plot for meta-regression by axis score, fig.height=6, fig.width=6}
 Axis.bubble <- bubble(m.cor.reg.axis, 
@@ -485,10 +485,10 @@ parameter <- par(mfrow=c(1,3))
 
 parameter <- bubble(m.cor.reg.age, 
                    xlim = c(35, 85), 
-                   ylim = c(-1, 0.5),
+                   ylim = c(-0.6, 0.1),
                    xlab = 'Age (years)',
                    font.lab = 2,
-                   studlab = TRUE, 
+                   studlab = F, 
                    cex = 2, 
                    cex.studlab = 0.5, 
                    pos.studlab = 4, 
@@ -497,10 +497,10 @@ parameter <- bubble(m.cor.reg.age,
 
 parameter <- bubble(m.cor.reg.women, 
                    xlim = c(0.1, 0.9), 
-                   ylim = c(-1.0, 0.5), 
+                   ylim = c(-0.6, 0.1), 
                    xlab = 'Proportion of women',
                    font.lab = 2,
-                   studlab = TRUE, 
+                   studlab = F, 
                    cex = 2, 
                    cex.studlab = 0.5, 
                    pos.studlab = 4, 
@@ -508,12 +508,12 @@ parameter <- bubble(m.cor.reg.women,
                    col.line = 'red')
 
 parameter <- bubble(m.cor.reg.axis, 
-                  xlim = c(5, 15), 
-                  ylim = c(-1.0, 0.5), 
+                  xlim = c(5, 10), 
+                  ylim = c(-0.6, 0.1), 
                   xlab = 'Quality score',
-                  studlab = TRUE, 
+                  studlab = F, 
                   font.lab = 2,
-                  cex = 1.5, 
+                  cex = 2, 
                   cex.studlab = 0.5, 
                   pos.studlab = 4, 
                   offset = 0.5, 
@@ -553,12 +553,12 @@ title("Contour-Enhanced Funnel Plot (Apathy and Physical Activity)")
 
 ```{r Contour-enhanced funnel plot for main analysis no labels, fig.height=6, fig.width=8}
 # Define fill colors for contour
-col.contour = c("gray75", "gray85", "gray95")
+col.contour = c("gray85", "gray75")
 
 # Funnel plot
 funnel(m.cor, 
        xlim = c(-1.5, 1),
-       contour = c(0.9, 0.95, 0.99),        
+       contour = c(0.95, 0.99),        
        studlab = FALSE,
        cex = 1,
        cex.studlab = 0.5, 
@@ -568,7 +568,7 @@ funnel(m.cor,
 
 # legend
 legend(x =0.5, y = 0.01, 
-       legend = c("p < 0.1", "p < 0.05", "p < 0.01"),
+       legend = c("p < 0.05", "p < 0.01"),
        fill = col.contour)
 
 # title
@@ -623,27 +623,37 @@ metabias(m.cor, method.bias = "linreg", k.min = 9)
 eggers.test(m.cor)
 ```
 
-Egger’s regression test does not indicate the presence of funnel plot asymmetry (b = -1.39, 95% CI: -2.69 to -0.09, p = 0.058), which suggests that publication bias is unlikely to influence the effect sizes observed in the main meta-analysis.
+Egger’s regression test showed that the data in the funnel plot was asymmetric (b = -1.44, 95% CI: -1.97 to -0.91, p = 3.1 x 10-5), which may be explained by publication bias, but also by other potential causes, such as different study procedures and between-study heterogeneity. 
 
+###  Limit meta-analysis 
+```{r Rücker Limit Meta-Analysis Method}
+limitmeta(m.cor)
+```
+
+The bias-corrected estimate of the true effect size, calculated using Rücker’s limit meta-analysis method, showed that the correlation would remain significant if there was publication bias (r = -0.08; 95% CI: -0.14 to -0.02; p = 0.0065). 
 
 ## Pcurve analysis
+
 Standard errors of the correlation values were calculated using the formula: sqrt((1 - correlation_coefficient^2) / (sample_size - 2))
 ```{r pcurve for main analysis}
-p_curve_data = data.frame("studlab" = c(paste("Study_", 1:21, sep = "")),
+p_curve_data = data.frame("studlab" = c(paste("Study_", 1:29, sep = "")),
                  "TE" = c(-0.27, -0.057, -0.37, -0.23, -0.25, -0.18, -0.03, -0.25, 
                           -0.048, -0.12, -0.32, 0.05, -0.17, -0.08, -0.49, -0.39, 
-                          -0.15, 0.01, -0.11, -0.71, -0.31),
+                          -0.15, 0.01, -0.11, -0.71, -0.31, -0.12, -0.15, -0.32, 
+                          -0.05, -0.17, -0.06, -0.17, -0.06),
                       
                  "seTE" = c(0.150373518685809, 0.257779104402717, 0.103225750448013, 
                             0.089212238675037,0.147656105804655, 0.176671738616584, 
                             0.162148405058939, 0.155043418, 0.217966358,      
                             0.0611010092660779, 0.095219046, 0.100378073, 0.122229293, 
                             0.064748784, 0.085479417225615, 0.090293325, 0.108522387, 
-                            0.109758772, 0.109098165, 0.109977825, 0.170757326))
+                            0.109758772, 0.109098165, 0.109977825, 0.170757326, 
+                            0.181254885, 0.063686864, 0.124402018, 0.015139517, 
+                            0.050685773, 0.018564909, 0.049772441, 0.018337961))
                   
 pcurve(p_curve_data)
 ```
-The 21 studies reporting a correlation value (Pearson’s r or Spearman’s rho) were provided to the p-curve analysis. The observed p-curve includes seven (33.3%) statistically significant results (p < 0.05), with the six of them being p < 0.025 (Figure 4). The other results were excluded because they had a p > 0.05. The p-value of the right-skewness test was < 0.001 for both the half curve and the full curve, suggesting that evidential value was present, i.e., that the effect we estimated is not spurious; an artifact caused by selective reporting (e.g., p-hacking) in the literature.
+The 29 studies reporting a correlation value (Pearson’s r or Spearman’s rho) were provided to the p-curve analysis. The observed p-curve includes 14 (48.3%) statistically significant results (p < 0.05), with 13 of them being p < 0.025 (Figure 4). The other results were excluded because they had a p > 0.05. The p-value of the right-skewness test was < 0.001 for both the half curve and the full curve, suggesting that evidential value was present, i.e., that the effect we estimated is not spurious; an artifact caused by selective reporting (e.g., p-hacking) in the literature.
 
 
 
@@ -651,7 +661,7 @@ The 21 studies reporting a correlation value (Pearson’s r or Spearman’s rho)
 
 - Cohen J. Statistical power analysis for the behavioral sciences. 2nd ed.; 1988.  
 - Egger M, Davey Smith G, Schneider M, Minder C. Bias in meta-analysis detected by a simple, graphical test. BMJ. 1997;315(7109):629-634. https://doi.org/10.1136/bmj.315.7109.62  
-- Higgins JPT, Thompson SG. Quantifying heterogeneity in a meta-analysis. Stat Med. 2002;21(11):1539-1558. https://doi.org/10.1002/sim.1186  
+- Higgins JPT, Thompson SG. Quantifying heterogeneity in a meta-analysis. Stat Med. 2002;21(11):1539-1558. https://doi.org/10.1002/sim.1186
 - Knapp G, Hartung J. Improved tests for a random effects meta-regression with a single covariate. Stat Med. 2003;22(17):2693-2710. https://doi.org/10.1002/sim.1482  
 - R Core Team. R: A language and environment for statistical computing [Computer software]. Version 4.3.1. Vienna, Austria: Foundation for Statistical Computing; 2023. https://www.r-project.org 
 - Schwarzer G. Meta: General package for meta-analysis [R package]. Version 6.5-0; 2023a. https://cran.r-project.org/web/packages/meta/meta.pdf 
