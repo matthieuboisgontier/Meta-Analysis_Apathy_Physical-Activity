@@ -173,6 +173,9 @@ summary(i2)
 plot(i2)
 ```
 
+The sampling error variance on level 1 is small, making up only 12.4%. The value of I2 Level 2, the amount of heterogeneity variance within clusters (i.e. within studies), is null (0%). The largest share, however, falls to level 3. Between-cluster (here: between-study) heterogeneity makes up I2 Level 3 = 87.6% of the total variation in our data. Overall, this indicates that there is considerable between-study heterogeneity on the third level, and very little of the variance can be explained by differences within studies.
+
+
 ### Comparing models
 
 Reduced model in which the level 3 variance (between study heterogeneity) is set to 0, which assumes all effect sizes are independent.
