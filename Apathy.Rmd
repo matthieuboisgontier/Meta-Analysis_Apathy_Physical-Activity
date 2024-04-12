@@ -199,6 +199,9 @@ Comparing full and reduced models.
 anova(mv.cor.rho, l3.removed)
 ```
 
+We see that the Full (3-level) model, compared to the Reduced one with 2 levels, shows a better fit. The Akaike (AIC) and Bayesian Information Criterion (BIC) are lower for the full model, which indicates favorable performance. The likelihood ratio test (LRT) comparing both models is significant (χ2 = 5.35, p = 0.0207), and thus points in the same direction. We can say that, although the 3-level model introduces one additional parameter (i.e. it has 3 degrees of freedom instead of 2), this added complexity seems to be justified. Modeling of the nested data structure was probably a good idea, and has improved our estimate of the pooled effect.
+
+
 ## Secondary analysis of rho values with meta
 
 ```{r Secondary meta-analysis based on rho values}
